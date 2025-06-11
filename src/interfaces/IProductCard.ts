@@ -1,4 +1,4 @@
-export interface ProductCard {
+export interface IProductCard {
   title: string;
   origin: string;
   price: number;

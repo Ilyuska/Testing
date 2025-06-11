@@ -7,9 +7,9 @@ import iphone from './images/iphone.png'
 import machine_oil from './images/machine_oil.png'
 import oil from './images/oil.png'
 
-import type { ProductCard } from "../interfaces/ProductCard";
+import type { IProductCard } from "../interfaces/IProductCard";
 
-export const products: ProductCard[] = [
+export const products: IProductCard[] = [
   // RUB (Россия)
   {
     title: "Кактус",

@@ -1,11 +1,11 @@
 
 import type { FC } from 'react';
 import { Box, Button, Card, CardActions, CardContent, Skeleton, Typography } from '@mui/material';
-import type { ProductCard } from '../../interfaces/ProductCard';
+import type { IProductCard } from '../../interfaces/IProductCard';
 import styles from './styles.module.scss'
 
 
-const ProductCard: FC <ProductCard> = ({title = '', origin = '', price = 0, currency = 'RUB', imageUrl = ''}) => {
+const ProductCard: FC <IProductCard> = ({title = '', origin = '', price = 0, currency = 'RUB', imageUrl = ''}) => {
     const formatPrice = () => {
         const amount = price / 100;
         const locale = currency === 'RUB' ? 'ru-RU' : 'en-US';
