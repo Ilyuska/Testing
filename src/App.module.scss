@@ -1,0 +1,43 @@
+.cards {
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+  
+  // Автоматический расчет отступов для центрирования
+  $card-width: 300px; // Фиксированная ширина карточки
+  $gap: 10px; // Отступ между карточками
+  
+  @mixin calculate-margins($columns) {
+    $total-gaps: ($columns - 1) * $gap;
+    $total-cards-width: $columns * $card-width;
+    $remaining-space: calc(100% - #{$total-cards-width} - #{$total-gaps});
+    margin-left: calc(#{$remaining-space} / 2);
+    margin-right: calc(#{$remaining-space} / 2);
+  }
+
+  // Адаптивность
+  @media (max-width: 619px) {
+    grid-template-columns: repeat(1, $card-width);
+    @include calculate-margins(1);
+  }
+
+  @media (min-width: 620px) and (max-width: 929px) {
+    grid-template-columns: repeat(2, $card-width);
+    @include calculate-margins(2);
+  }
+
+  @media (min-width: 930px) and (max-width: 1239px) {
+    grid-template-columns: repeat(3, $card-width);
+    @include calculate-margins(3);
+  }
+
+  @media (min-width: 1240px) and (max-width: 1549px) {
+    grid-template-columns: repeat(4, $card-width);
+    @include calculate-margins(4);
+  }
+
+  @media (min-width: 1550px) {
+    grid-template-columns: repeat(5, $card-width);
+    @include calculate-margins(5);
+  }
+}
